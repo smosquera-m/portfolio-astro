@@ -1,0 +1,105 @@
+---
+const { experiences } = Astro.props;
+---
+
+<div class="experience-timeline">
+  {experiences.map((item, index) => (
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <span class="date">{item.date}</span>
+        <h3>{item.title}</h3>
+        <p class="company">{item.company}</p>
+        <p class="description">{item.description}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .experience-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: rgba(59, 130, 246, 0.2);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: 3px solid var(--color-bg);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    z-index: 1;
+  }
+
+  .timeline-content {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .timeline-content:hover {
+    transform: translateX(5px);
+    border-color: rgba(59, 130, 246, 0.3);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .date {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 4px;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-text);
+  }
+
+  .company {
+    font-weight: 600;
+    color: var(--color-secondary);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    color: var(--color-secondary);
+    line-height: 1.6;
+    opacity: 0.7;
+  }
+</style>

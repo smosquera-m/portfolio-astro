@@ -1,5 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Experience from '../components/Experience.astro';
+
+const professionalExperience = [
+  {
+    date: '2023 - Presente',
+    title: 'Desarrollador Full Stack Senior',
+    company: 'Tech Innovators S.L.',
+    description: 'Liderazgo técnico en proyectos de gran escala utilizando Astro, React y Node.js.'
+  },
+  {
+    date: '2021 - 2023',
+    title: 'Desarrollador Frontend',
+    company: 'Digital Solutions',
+    description: 'Desarrollo de interfaces modernas y optimización de rendimiento web.'
+  }
+];
+
+const education = [
+  {
+    date: '2017 - 2021',
+    title: 'Grado en Ingeniería Informática',
+    company: 'Universidad Politécnica',
+    description: 'Especialización en ingeniería de software y sistemas distribuidos.'
+  }
+];
 ---
 
 <Layout title="Inicio">
@@ -11,8 +36,8 @@ import Layout from '../layouts/Layout.astro';
           Desarrollador enfocado en crear experiencias web excepcionales.
         </p>
         <div class="cta-buttons">
-          <a href="#proyectos" class="btn btn-primary">Ver mis proyectos</a>
-          <a href="#contacto" class="btn btn-secondary">Contactar</a>
+          <a href="#experiencia" class="btn btn-primary">Mi Trayectoria</a>
+          <a href="#proyectos" class="btn btn-secondary">Proyectos</a>
         </div>
       </div>
       <div class="hero-image">
@@ -23,6 +48,24 @@ import Layout from '../layouts/Layout.astro';
             <line x1="19" y1="8" x2="19" y2="14" />
             <line x1="22" y1="11" x2="16" y2="11" />
           </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia" class="timeline-section container">
+      <div class="tabs-container">
+        <h2 class="section-title">Mi Trayectoria</h2>
+        
+        <div class="career-grid">
+          <div class="career-column">
+            <h3 class="column-title">Experiencia Laboral</h3>
+            <Experience experiences={professionalExperience} />
+          </div>
+          
+          <div class="career-column">
+            <h3 class="column-title">Educación</h3>
+            <Experience experiences={education} />
+          </div>
         </div>
       </div>
     </section>
@@ -159,6 +202,48 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-primary);
     border: 2px solid rgba(59, 130, 246, 0.2);
     box-shadow: 0 0 50px rgba(59, 130, 246, 0.1);
+  }
+
+  /* --- Timeline Section --- */
+  .timeline-section {
+    padding: 6rem 1rem;
+    background: linear-gradient(to bottom, transparent, rgba(59, 130, 246, 0.02), transparent);
+  }
+
+  .career-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+  }
+
+  .column-title {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: var(--color-primary);
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .column-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--color-primary);
+    opacity: 0.5;
+  }
+
+  @media (max-width: 900px) {
+    .career-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
   }
 
   /* --- Projects Section --- */
