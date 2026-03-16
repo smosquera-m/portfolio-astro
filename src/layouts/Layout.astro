@@ -4,13 +4,13 @@ import '../styles/global.css';
 const { title } = Astro.props;
 ---
 
-<html lang="es">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Mi Portfolio</title>
+		<title>{title} | My Portfolio</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@ const { title } = Astro.props;
 	<body>
 		<slot />
         <footer class="container">
-            <p>&copy; {new Date().getFullYear()} Sergio Portfolio. Construido con Astro.</p>
+            <p>&copy; {new Date().getFullYear()} Sergio Portfolio. Built with Astro.</p>
         </footer>
 	</body>
 </html>

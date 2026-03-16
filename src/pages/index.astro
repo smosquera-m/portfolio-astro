@@ -4,10 +4,10 @@ import Experience from '../components/Experience.astro';
 
 const professionalExperience = [
   {
-    date: '15 de julio de 2024 - Presente',
-    title: 'Desarrollador (Remoto)',
+    date: 'July 15, 2024 - Present',
+    title: 'Developer (Remote)',
     company: 'Rhinoceros Auklet',
-    description: 'Trabajando en remoto para Rhinoceros Auklet.',
+    description: 'Working remotely for Rhinoceros Auklet.',
     details: [
       'Laravel framework',
       'Team leader',
@@ -19,9 +19,9 @@ const professionalExperience = [
 const education = [
   {
     date: '2022 - 2024',
-    title: 'Grado Superior en Desarrollo de Aplicaciones Web (DAW)',
-    company: 'Escuela Virgen de Guadalupe (Badajoz)',
-    description: 'Formación especializada en desarrollo de software y tecnologías web.',
+    title: "Higher Technician's Degree in Web Application Development (DAW)",
+    company: 'Virgen de Guadalupe School (Badajoz)',
+    description: 'Specialized training in software development and web technologies.',
     details: [
       'Front / back end development',
       'Git',
@@ -30,13 +30,13 @@ const education = [
   },
   {
     date: '2020 - 2022',
-    title: 'Grado Medio en Sistemas Microinformáticos y Redes (SMR)',
-    company: 'Escuela Virgen de Guadalupe (Badajoz)',
-    description: 'Fundamentos de hardware, redes y sistemas operativos.',
+    title: "Technician's Degree in Microcomputer Systems and Networks (SMR)",
+    company: 'Virgen de Guadalupe School (Badajoz)',
+    description: 'Fundamentals of hardware, networking, and operating systems.',
     details: [
-      'Gestión de servicios Linux/Windows',
-      'Topología de redes',
-      'Automatización de scripts'
+      'Linux/Windows services management',
+      'Network topology',
+      'Script automation'
     ]
   }
 ];
@@ -46,13 +46,13 @@ const education = [
   <main>
     <section class="hero container animate-fade-in">
       <div class="hero-content">
-        <h1 class="title">Hola, soy <span class="gradient-text">Sergio</span>.</h1>
+        <h1 class="title">Hi, I'm <span class="gradient-text">Sergio</span>.</h1>
         <p class="subtitle">
-          Desarrollador enfocado en crear experiencias web excepcionales.
+          Developer focused on creating exceptional web experiences.
         </p>
         <div class="cta-buttons">
-          <a href="#experiencia" class="btn btn-primary">Mi Trayectoria</a>
-          <a href="#proyectos" class="btn btn-secondary">Proyectos</a>
+          <a href="#experiencia" class="btn btn-primary">My Career</a>
+          <a href="#proyectos" class="btn btn-secondary">Projects</a>
         </div>
       </div>
       <div class="hero-image">
@@ -69,16 +69,16 @@ const education = [
 
     <section id="experiencia" class="timeline-section container">
       <div class="tabs-container">
-        <h2 class="section-title">Mi Trayectoria</h2>
+        <h2 class="section-title">My Career</h2>
         
         <div class="career-grid">
           <div class="career-column">
-            <h3 class="column-title">Experiencia Laboral</h3>
+            <h3 class="column-title">Work Experience</h3>
             <Experience experiences={professionalExperience} />
           </div>
           
           <div class="career-column">
-            <h3 class="column-title">Educación</h3>
+            <h3 class="column-title">Education</h3>
             <Experience experiences={education} />
           </div>
         </div>
@@ -86,18 +86,18 @@ const education = [
     </section>
 
     <section id="proyectos" class="projects container">
-      <h2 class="section-title">Proyectos Destacados</h2>
+      <h2 class="section-title">Featured Projects</h2>
       <div class="projects-grid">
         <article class="project-card">
           <div class="project-image-placeholder"></div>
           <div class="project-info">
-            <h3>Proyecto Alpha</h3>
-            <p>Una aplicación web moderna y rápida construida con las últimas tecnologías del mercado.</p>
+            <h3>Project Alpha</h3>
+            <p>A fast and modern web application built with the latest technologies on the market.</p>
             <div class="tags">
               <span class="tag">Astro</span>
               <span class="tag">JavaScript</span>
             </div>
-            <a href="#" class="view-link">Ver detalles &rarr;</a>
+            <a href="#" class="view-link">View details &rarr;</a>
           </div>
         </article>
         
@@ -105,12 +105,12 @@ const education = [
           <div class="project-image-placeholder"></div>
           <div class="project-info">
             <h3>API Dashboard</h3>
-            <p>Panel de administración con estadísticas en tiempo real y gestión de usuarios avanzada.</p>
+            <p>Admin panel with real-time statistics and advanced user management.</p>
             <div class="tags">
               <span class="tag">PHP</span>
               <span class="tag">Vue.js</span>
             </div>
-            <a href="#" class="view-link">Ver detalles &rarr;</a>
+            <a href="#" class="view-link">View details &rarr;</a>
           </div>
         </article>
       </div>
