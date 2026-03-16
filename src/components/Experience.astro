@@ -11,6 +11,13 @@ const { experiences } = Astro.props;
         <h3>{item.title}</h3>
         <p class="company">{item.company}</p>
         <p class="description">{item.description}</p>
+        {item.details && (
+          <ul class="extra-details">
+            {item.details.map(detail => (
+              <li>{detail}</li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   ))}
@@ -101,5 +108,43 @@ const { experiences } = Astro.props;
     color: var(--color-secondary);
     line-height: 1.6;
     opacity: 0.7;
+    transition: margin-bottom 0.3s ease;
+  }
+
+  .extra-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    list-style: none;
+    padding-top: 0;
+    transition: all 0.4s ease;
+    border-top: 1px solid rgba(255, 255, 255, 0);
+  }
+
+  .extra-details li {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+    opacity: 0.8;
+  }
+
+  .extra-details li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+  }
+
+  .timeline-content:hover .description {
+    margin-bottom: 1rem;
+  }
+
+  .timeline-content:hover .extra-details {
+    max-height: 300px;
+    opacity: 1;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 </style>
