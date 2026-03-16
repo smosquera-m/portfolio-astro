@@ -6,6 +6,18 @@
   --color-accent: #6366f1;
 }
 
+:root[data-theme='light'] {
+  --color-bg: #f8fafc;
+  --color-text: #0f172a;
+  --color-primary: #2563eb;
+  --color-secondary: #475569;
+  --color-accent: #4f46e5;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 html {
   scroll-behavior: smooth;
 }

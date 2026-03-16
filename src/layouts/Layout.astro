@@ -1,6 +1,6 @@
----
 import '../styles/global.css';
 import LanguagePicker from '../components/LanguagePicker.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
 
 const { title, lang = 'en' } = Astro.props;
 ---
@@ -17,10 +17,48 @@ const { title, lang = 'en' } = Astro.props;
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
 	</head>
 	<body>
-        <LanguagePicker currentLang={lang} />
+        <div class="controls-container">
+            <ThemeToggle />
+            <div class="separator"></div>
+            <LanguagePicker currentLang={lang} />
+        </div>
 		<slot />
         <footer class="container">
             <p>&copy; {new Date().getFullYear()} Sergio Portfolio. Built with Astro.</p>
         </footer>
+
+        <style>
+            .controls-container {
+                position: fixed;
+                top: 1.5rem;
+                right: 1.5rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                background: rgba(15, 23, 42, 0.6);
+                backdrop-filter: blur(12px);
+                padding: 0.5rem 1rem;
+                border-radius: 100px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                z-index: 1000;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            :root[data-theme='light'] .controls-container {
+                background: rgba(255, 255, 255, 0.6);
+                border-color: rgba(0, 0, 0, 0.1);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            }
+
+            .separator {
+                width: 1px;
+                height: 20px;
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            :root[data-theme='light'] .separator {
+                background: rgba(0, 0, 0, 0.1);
+            }
+        </style>
 	</body>
 </html>
