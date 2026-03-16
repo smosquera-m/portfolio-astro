@@ -30,14 +30,8 @@ const currentEducation = experienceData[lang].education;
         <div class="cta-buttons">
           <a href="#experiencia" class="btn btn-primary">{t('hero.cta.career')}</a>
           <a href="#proyectos" class="btn btn-secondary">{t('hero.cta.projects')}</a>
+          <a href="#contacto" class="btn btn-outline">{t('hero.cta.contact')}</a>
         </div>
-      </div>
-
-      <div class="hero-contact-link">
-        <a href="#contacto" class="vertical-contact">
-          <span class="line"></span>
-          <span class="text">{t('hero.cta.contact')}</span>
-        </a>
       </div>
 
       <div class="hero-image">
@@ -232,54 +226,6 @@ const currentEducation = experienceData[lang].education;
     color: var(--color-primary);
     border: 2px solid rgba(59, 130, 246, 0.2);
     box-shadow: 0 0 50px rgba(59, 130, 246, 0.1);
-  }
-
-  .hero-contact-link {
-    display: flex;
-    align-items: center;
-    padding: 0 1rem;
-  }
-
-  .vertical-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .vertical-contact .text {
-    writing-mode: vertical-rl;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--color-secondary);
-    opacity: 0.5;
-  }
-
-  .vertical-contact .line {
-    width: 1px;
-    height: 60px;
-    background: var(--color-primary);
-    opacity: 0.3;
-  }
-
-  .vertical-contact:hover .text {
-    opacity: 1;
-    color: var(--color-primary);
-  }
-
-  .vertical-contact:hover .line {
-    height: 80px;
-    opacity: 1;
-  }
-
-  @media (max-width: 1000px) {
-    .hero-contact-link {
-        display: none;
-    }
   }
 
   /* --- Timeline Section --- */
