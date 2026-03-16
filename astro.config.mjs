@@ -4,4 +4,11 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://smosquera-m.github.io',
   base: '/portfolio-astro',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es', 'pt'],
+    routing: {
+        prefixDefaultLocale: false
+    }
+  }
 });
