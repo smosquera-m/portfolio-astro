@@ -7,7 +7,7 @@ const { currentLang } = Astro.props;
 <div class="language-picker">
   {Object.entries(languages).map(([lang, label]) => (
     <a 
-      href={lang === 'en' ? '/' : `/${lang}/`}
+      href={lang === 'en' ? '/portfolio-astro/' : `/portfolio-astro/${lang}/`}
       class={currentLang === lang ? 'active' : ''}
     >
       {lang.toUpperCase()}
